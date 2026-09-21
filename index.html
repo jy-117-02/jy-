@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>삼성전자 재무 대시보드</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">OpenDART Financial Agent</p><h1>삼성전자 재무 대시보드</h1><p id="meta">데이터를 불러오는 중입니다.</p></div><span class="badge">CFS · Annual</span></header>
+    <section id="cards" class="cards"></section>
+    <section class="panel"><h2>주요 손익 추세</h2><canvas id="incomeChart"></canvas></section>
+    <section class="grid"><article class="panel"><h2>수익성</h2><canvas id="profitChart"></canvas></article><article class="panel"><h2>안정성</h2><canvas id="stabilityChart"></canvas></article></section>
+    <section class="panel"><h2>연도별 상세</h2><div class="table-wrap"><table id="table"></table></div></section>
+    <p class="notice">본 자료는 OpenDART 공시자료 기반의 자동 분석이며 투자 권유가 아닙니다.</p>
+  </main><script src="app.js"></script>
+</body></html>
+
