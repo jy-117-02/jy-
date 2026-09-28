@@ -1,0 +1,9 @@
+[
+  {"company":"SK하이닉스","stockCode":"000660","segment":"메모리 반도체","reason":"삼성전자 DS 부문의 국내 핵심 비교기업"},
+  {"company":"LG전자","stockCode":"066570","segment":"가전·전자제품","reason":"완제품과 글로벌 소비자 전자사업 비교"},
+  {"company":"LG디스플레이","stockCode":"034220","segment":"디스플레이","reason":"디스플레이 패널 업황과 설비투자 비교"},
+  {"company":"삼성전기","stockCode":"009150","segment":"전자부품","reason":"MLCC·카메라모듈 등 전자부품 수요 비교"},
+  {"company":"DB하이텍","stockCode":"000990","segment":"파운드리","reason":"국내 시스템반도체 생산기업 비교"},
+  {"company":"한미반도체","stockCode":"042700","segment":"반도체 장비","reason":"AI·HBM 투자 사이클의 공급망 비교"}
+]
+

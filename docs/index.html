@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="OpenDART 기반 삼성전자 재무 분석 대시보드">
+  <title>Samsung Financial Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav wrap">
+      <a class="brand" href="#top" aria-label="대시보드 홈"><span class="brand-mark">S</span><span>Financial Intelligence</span></a>
+      <div class="nav-links"><a href="#annual">Annual</a><a href="#half">Half-year</a><a href="#quarterly">Quarterly</a><a href="#peers">Peers</a></div>
+    </nav>
+    <div class="hero-content wrap" id="top">
+      <div>
+        <p class="eyebrow">OPENDART · AUTOMATED ANALYTICS</p>
+        <h1>삼성전자의 재무 흐름을<br><span>한눈에 읽다.</span></h1>
+        <p class="hero-copy">2010년 이후 사업·반기·분기보고서를 구조화하고, 핵심 재무수치와 수익성·안정성·효율성 비율을 자동 분석합니다.</p>
+        <div class="hero-meta"><span id="updatedAt">데이터 확인 중</span><span>매월 1일 자동 갱신</span><span>KRW · 연결 우선</span></div>
+      </div>
+      <div class="signal-card" aria-label="최신 핵심 지표">
+        <div class="signal-head"><span>LATEST ANNUAL</span><span class="live-dot">LIVE</span></div>
+        <div id="heroKpis" class="hero-kpis"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="overview wrap">
+      <div class="section-title"><div><p class="eyebrow dark">FINANCIAL OVERVIEW</p><h2>핵심 지표 추이</h2></div><p>그래프에 마우스를 올리면 원 단위 수치를 확인할 수 있습니다.</p></div>
+      <div class="kpi-grid" id="kpiGrid"></div>
+      <div class="chart-grid">
+        <article class="chart-card chart-wide"><div class="card-head"><div><p>규모와 성장</p><h3>매출액 · 영업이익</h3></div><span>Annual</span></div><div class="chart-box"><canvas id="incomeChart"></canvas></div></article>
+        <article class="chart-card"><div class="card-head"><div><p>수익성</p><h3>영업이익률 · ROE</h3></div><span>%</span></div><div class="chart-box"><canvas id="marginChart"></canvas></div></article>
+        <article class="chart-card"><div class="card-head"><div><p>재무 건전성</p><h3>자산 · 부채 · 자본</h3></div><span>Annual</span></div><div class="chart-box"><canvas id="balanceChart"></canvas></div></article>
+        <article class="chart-card chart-wide"><div class="card-head"><div><p>현금 창출력</p><h3>영업현금흐름 · CAPEX · FCF</h3></div><span>Annual</span></div><div class="chart-box"><canvas id="cashflowChart"></canvas></div></article>
+      </div>
+      <div id="dataNotice" class="notice" hidden></div>
+    </section>
+
+    <section class="data-section wrap" id="annual">
+      <div class="section-title"><div><p class="eyebrow dark">01 · ANNUAL</p><h2>사업보고서</h2></div><p>연간 재무성과와 비율 분석</p></div>
+      <div class="table-card"><div class="table-toolbar"><span>단위: 조원 / %, 배·일</span><button type="button" data-download="annual">CSV 내보내기</button></div><div class="table-scroll"><table id="annualTable"></table></div></div>
+    </section>
+
+    <section class="data-section tint" id="half"><div class="wrap">
+      <div class="section-title"><div><p class="eyebrow dark">02 · HALF-YEAR</p><h2>반기보고서</h2></div><p>상반기 누적 실적과 재무상태</p></div>
+      <div class="table-card"><div class="table-toolbar"><span>단위: 조원 / %, 배·일</span><button type="button" data-download="halfYear">CSV 내보내기</button></div><div class="table-scroll"><table id="halfTable"></table></div></div>
+    </div></section>
+
+    <section class="data-section wrap" id="quarterly">
+      <div class="section-title"><div><p class="eyebrow dark">03 · QUARTERLY</p><h2>분기보고서</h2></div><p>1분기·3분기 누적 실적 비교</p></div>
+      <div class="table-card"><div class="table-toolbar"><span>단위: 조원 / %, 배·일</span><button type="button" data-download="quarterly">CSV 내보내기</button></div><div class="table-scroll"><table id="quarterlyTable"></table></div></div>
+    </section>
+
+    <section class="peers-section" id="peers"><div class="wrap">
+      <div class="section-title light"><div><p class="eyebrow">04 · PEER UNIVERSE</p><h2>국내 Peer Firms</h2></div><p>사업부·공급망 관점의 국내 비교기업</p></div>
+      <div class="peer-grid" id="peerGrid"></div>
+    </div></section>
+  </main>
+
+  <footer><div class="wrap"><div><strong>Samsung Financial Intelligence</strong><p>OpenDART 공개 데이터 기반 교육·분석 프로젝트</p></div><div class="footer-links"><a href="https://github.com/HSC-Class02/JY_SAMSUNG" target="_blank" rel="noreferrer">GitHub</a><a href="https://opendart.fss.or.kr/" target="_blank" rel="noreferrer">OpenDART</a></div></div></footer>
+</body>
+</html>
